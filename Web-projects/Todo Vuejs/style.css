@@ -1,0 +1,130 @@
+body{
+    margin: 0 auto;
+    font-family: 'Open sans', sans-serif;
+    background: #b8e1ee;
+    background: linear-gradient(to top, rgb(55,69,174) 50%, rgb(66,87,254) 50%) no-repeat;
+    background-size: 100% 700px;
+    
+}
+
+* {
+    box-sizing: border-box;
+}
+p{
+    color: beige;
+    text-align:center;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 100px;
+    margin-bottom: 0px;
+
+}
+.block {
+    display: block;
+    margin: 0px auto;
+    width: 600px;
+    min-height: 350px;
+    padding: 0px;
+    background-color: rgb(223, 244, 253);
+    border-radius: 10px;
+}
+.addtext{
+    border-bottom: 1px solid #b8bec0;
+    padding-bottom: 20px;
+}
+.createtext{
+    padding-top: 20px; 
+    padding-left: 25px;
+    border: none;
+    color: #757575;
+    background: none;
+    font-size: 24px;
+    outline: none;
+}
+input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.btncreate{
+    float: right;
+    margin-right: 25px;
+    margin-top: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    border-radius: 30px;
+    height: 45px;
+    width: 45px;
+    background-color: #4355fd;
+    margin-bottom:10px; 
+    outline: none;
+}
+.btncreate:hover{
+    opacity: 0.7;
+}
+.controlbar{
+    margin-top: 15px;
+    padding-left: 15px; 
+    padding-bottom: 15px;
+    border-bottom: 1px solid #b8bec0;
+}
+.alltasks{
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    color: #ffffff;
+    background-color: #00a8f6;
+    
+}
+.incomplete{
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    color: #ffffff;
+    background-color: #f13b6b;
+}
+.complete{
+    margin-left: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    color: #ffffff;
+    background-color: #21af95;
+}
+
+.chek {
+    background: #CADDE5; 
+    width: 100%;
+}
+
+ul{ 
+    padding: 0;
+    margin: 0;
+}
+.stylechek{
+    border-bottom: 1px solid #757575;
+    border-color: #b8bec0;
+    padding-left: 25px;
+    width: 100%;
+    color: #474343;
+}
+.stylechek input{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+li {
+    list-style: none;
+}
+.cleartask1{
+    position: absolute;
+    left: 38%;
+    width: 270px;
+    margin: 0 auto;
+    bottom: 70px;
+    text-align: center;
+}
+.cleartask1 button{
+    background: none;
+    border: none;
+    color: #474343;
+    font-size: 24px; 
+} 
