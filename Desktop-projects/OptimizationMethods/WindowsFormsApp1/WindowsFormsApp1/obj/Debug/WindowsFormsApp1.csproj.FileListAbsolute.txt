@@ -1,0 +1,29 @@
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Жангарач\Мет оптимизации\Метод деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Жангарач\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\Жангарач\Учёба\4 семестр\Мет оптимизации\Метод №1 деления отрезка пополам\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
