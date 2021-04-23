@@ -1,0 +1,41 @@
+﻿<Window x:Class="HomeRenovationCalculator.View.SettingDatas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeRenovationCalculator.View"
+        xmlns:vm="clr-namespace:HomeRenovationCalculator.ViewModel"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Настройка данных" Height="450" Width="800"
+        d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <GroupBox Header="Параметры пола:" Margin="2">
+            <UniformGrid Columns="2" Rows="2">
+                <TextBlock Margin="2" Text="Ширина [м]:"/>
+                <TextBox Margin="2" Text="{Binding RoomParameters.FloorWidth, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Margin="2" Text="Длина [м]:"/>
+                <TextBox Margin="2" Text="{Binding RoomParameters.FloorLength, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+            </UniformGrid>
+        </GroupBox>
+
+        <GroupBox Grid.Column="1" Header="Параметры потолка:"  Margin="2">
+            <UniformGrid Columns="2" Rows="2">
+                <TextBlock Margin="2" Text="Ширина [м]:"/>
+                <TextBox Margin="2" Text="{Binding RoomParameters.FloorWidth, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Margin="2" Text="Длина [м]:"/>
+                <TextBox Margin="2" Text="{Binding RoomParameters.FloorLength, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+            </UniformGrid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1" Grid.Column="0" Header="Параметры стены:"  Margin="2">
+            <UniformGrid Columns="2" Rows="2">
+                <TextBlock Margin="2" Text="Ширина [м]:"/>
+                <TextBox Margin="2" Text="{Binding RoomParameters.FloorWidth, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Margin="2" Text="Длина [м]:"/>
+                <TextBox Margin="2" Text="{Binding RoomParameters.FloorLength, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
+            </UniformGrid>
+        </GroupBox>
+    </Grid>
+</Window>
