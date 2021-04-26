@@ -71,16 +71,30 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="RoomParameters.cs" />
+    <Compile Include="ViewModel\BaseParamVM.cs" />
+    <Compile Include="ViewModel\CeilVM.cs" />
+    <Compile Include="ViewModel\CoverParameterVM.cs" />
     <Compile Include="ViewModel\FloorVM.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SettingDatasVM.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\WallVM.cs" />
+    <Compile Include="View\Ceil.xaml.cs">
+      <DependentUpon>Ceil.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Floor.xaml.cs">
       <DependentUpon>Floor.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SettingDatas.xaml.cs">
       <DependentUpon>SettingDatas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Wall.xaml.cs">
+      <DependentUpon>Wall.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Ceil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Floor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +112,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\SettingDatas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Wall.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

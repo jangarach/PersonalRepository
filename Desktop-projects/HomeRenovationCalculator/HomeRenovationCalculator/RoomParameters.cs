@@ -14,46 +14,6 @@ namespace HomeRenovationCalculator
 
         }
 
-        double _FloorLength;
-        /// <summary>
-        /// Длина пола
-        /// </summary>
-        public double FloorLength
-        {
-            get => _FloorLength;
-            set => Set(ref _FloorLength, value);
-        }
-
-        double _FloorWidth;
-        /// <summary>
-        /// Ширина пола
-        /// </summary>
-        public double FloorWidth
-        {
-            get => _FloorWidth;
-            set => Set(ref _FloorWidth, value);
-        }
-
-        double _CeilingLength;
-        /// <summary>
-        /// Длина потолка
-        /// </summary>
-        public double CeilingLength
-        {
-            get => _CeilingLength;
-            set => Set(ref _CeilingLength, value);
-        }
-
-        double _CeilingWidth;
-        /// <summary>
-        /// Ширина потолка
-        /// </summary>
-        public double CeilingWidth
-        {
-            get => _CeilingWidth;
-            set => Set(ref _CeilingWidth, value);
-        }
-
         double _WallHeight;
         /// <summary>
         /// Высота стены
@@ -74,5 +34,24 @@ namespace HomeRenovationCalculator
             set => Set(ref _WallLength, value);
         }
 
+        double _CeilingArea;
+        /// <summary>
+        /// Площадь потолка
+        /// </summary>
+        public double CeilingArea
+        {
+            get => _CeilingArea;
+            set => Set(ref _CeilingArea, value);
+        }
+
+        double _FloorArea;
+        /// <summary>
+        /// Площадь пола
+        /// </summary>
+        public double FloorArea
+        {
+            get => _FloorArea;
+            set => Set(ref _FloorArea, value);
+        }
     }
 }

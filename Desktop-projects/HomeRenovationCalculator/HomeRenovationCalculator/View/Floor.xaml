@@ -4,9 +4,55 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:HomeRenovationCalculator.View"
+             xmlns:xm="clr-namespace:HomeRenovationCalculator.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance Type=xm:FloorVM, IsDesignTimeCreatable=True}">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Расчет напольного покрытия:">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="Тип покрытия:"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Margin="2" VerticalAlignment="Top" ItemsSource="{Binding CoverTypes}" DisplayMemberPath="CoverTypeName" SelectedValue="{Binding SelectedCoverType}"/>
+                <ItemsControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding CoverParams}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="{Binding ParamName}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding ParamValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </GroupBox>
+        <Grid Margin="2" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>
+                    <Run Text="Минимальный расход: "/>
+                    <Run Text="{Binding MinCountCover}"/>
+                    <Run Text="{Binding UnitText}"/>
+                </TextBlock>
+                
+            </StackPanel>
+            <Button Content="Вычислить" HorizontalAlignment="Right" Command="{Binding CommandCalcCoverCount}"/>
+        </Grid>
     </Grid>
 </UserControl>

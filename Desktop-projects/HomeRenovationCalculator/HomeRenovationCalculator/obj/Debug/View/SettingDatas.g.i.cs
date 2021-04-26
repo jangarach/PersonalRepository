@@ -9,7 +9,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using HomeRenovationCalculator;
 using HomeRenovationCalculator.View;
 using HomeRenovationCalculator.ViewModel;
 using System;
