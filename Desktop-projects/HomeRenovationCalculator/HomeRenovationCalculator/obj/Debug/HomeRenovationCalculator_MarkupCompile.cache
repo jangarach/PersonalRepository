@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Repos\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\obj\Debug\
+E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\obj\Debug\
 HomeRenovationCalculator
 none
 false
 DEBUG;TRACE
-E:\Repos\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\App.xaml
-51429734284
+E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\App.xaml
+7882188572
 
-181803537753
-711979078383
-View\Ceil.xaml;View\Floor.xaml;View\MainWindow.xaml;View\SettingDatas.xaml;View\Wall.xaml;
+301603589473
+77575247242
+View\Ceil.xaml;View\CoverEdit.xaml;View\CoverTypeEdit.xaml;View\Floor.xaml;View\MainWindow.xaml;View\SettingDatas.xaml;View\Wall.xaml;
 
 False
 

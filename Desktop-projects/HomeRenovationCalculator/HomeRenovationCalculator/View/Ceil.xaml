@@ -39,7 +39,6 @@
                     <Run Text="{Binding MinCountCover}"/>
                     <Run Text="{Binding UnitText}"/>
                 </TextBlock>
-
             </StackPanel>
             <Button Content="Вычислить" HorizontalAlignment="Right" Command="{Binding CommandCalcCoverCount}"/>
         </Grid>

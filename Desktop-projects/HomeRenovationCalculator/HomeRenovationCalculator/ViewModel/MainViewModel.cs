@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight.Command;
 using HomeRenovationCalculator.View;
 using System;
 using System.Windows;
+using System.Windows.Input;
 
 namespace HomeRenovationCalculator.ViewModel
 {
@@ -30,7 +31,10 @@ namespace HomeRenovationCalculator.ViewModel
         {
             get => _CommandSettingDatas ?? (_CommandSettingDatas = new RelayCommand(() =>
             {
+                Mouse.OverrideCursor = Cursors.Wait;
                 SettingDatas settingDatas = new SettingDatas();
+                settingDatas.DataContext = ServiceLocator.Current.GetInstance<SettingDatasVM>();
+                Mouse.OverrideCursor = Cursors.Arrow;
                 settingDatas.ShowDialog();
             }));
         }

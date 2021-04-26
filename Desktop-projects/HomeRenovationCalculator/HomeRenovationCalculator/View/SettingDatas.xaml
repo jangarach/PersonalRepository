@@ -8,34 +8,74 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Настройка данных" Height="450" Width="800"
-        d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
+        d:DataContext="{d:DesignInstance Type=vm:SettingDatasVM, IsDesignTimeCreatable=True}"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Window.Resources>
+        <Style x:Key="DataGridStyle" TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="CanUserReorderColumns" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+    </Window.Resources>
     <Grid>
-        <GroupBox Header="Параметры пола:" Margin="2">
-            <UniformGrid Columns="2" Rows="2">
-                <TextBlock Margin="2" Text="Ширина [м]:"/>
-                <TextBox Margin="2" Text="{Binding RoomParameters.FloorWidth, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Margin="2" Text="Длина [м]:"/>
-                <TextBox Margin="2" Text="{Binding RoomParameters.FloorLength, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
-            </UniformGrid>
-        </GroupBox>
-
-        <GroupBox Grid.Column="1" Header="Параметры потолка:"  Margin="2">
-            <UniformGrid Columns="2" Rows="2">
-                <TextBlock Margin="2" Text="Ширина [м]:"/>
-                <TextBox Margin="2" Text="{Binding RoomParameters.FloorWidth, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Margin="2" Text="Длина [м]:"/>
-                <TextBox Margin="2" Text="{Binding RoomParameters.FloorLength, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
-            </UniformGrid>
-        </GroupBox>
-
-        <GroupBox Grid.Row="1" Grid.Column="0" Header="Параметры стены:"  Margin="2">
-            <UniformGrid Columns="2" Rows="2">
-                <TextBlock Margin="2" Text="Ширина [м]:"/>
-                <TextBox Margin="2" Text="{Binding RoomParameters.FloorWidth, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
-                <TextBlock Margin="2" Text="Длина [м]:"/>
-                <TextBox Margin="2" Text="{Binding RoomParameters.FloorLength, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"/>
-            </UniformGrid>
-        </GroupBox>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2,10,0,0">
+            <Button Content="Добавить" Margin="2" Command="{Binding AddCommand}"/>
+            <Button Content="Редактировать" Margin="2" Command="{Binding EditCommand}"/>
+            <Button Content="Удалить" Margin="2" Command="{Binding DeleteCommand}"/>
+        </StackPanel>
+        <TabControl Grid.Row="1" Margin="2,10" SelectedIndex="{Binding SelectedTabIndex}">
+            <TabItem Header="Штукатурка">
+                <DataGrid ItemsSource="{Binding Plaster}" SelectedItem="{Binding SelectedCover}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Объем (кг.)" Binding="{Binding Capacity}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            
+            <TabItem Header="Шпаклевка">
+                <DataGrid ItemsSource="{Binding Putty}" SelectedItem="{Binding SelectedCover}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Объем (кг.)" Binding="{Binding Capacity}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Обои">
+                <DataGrid ItemsSource="{Binding WallPaper}" SelectedItem="{Binding SelectedPaper}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Ширина (м.)" Binding="{Binding Length}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Клей">
+                <DataGrid ItemsSource="{Binding Glue}" SelectedItem="{Binding SelectedCover}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Объем (л.)" Binding="{Binding Capacity}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Краска">
+                <DataGrid ItemsSource="{Binding WallPaint}" SelectedItem="{Binding SelectedCover}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Объем (л.)" Binding="{Binding Capacity}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>
