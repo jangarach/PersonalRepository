@@ -37,10 +37,16 @@ namespace HomeRenovationCalculator.ViewModel
 
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<SettingDatasVM>();
+            SimpleIoc.Default.Register<FloorVM>();
+            SimpleIoc.Default.Register<CeilVM>();
+            SimpleIoc.Default.Register<WallVM>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public SettingDatasVM SettingDatasVM => ServiceLocator.Current.GetInstance<SettingDatasVM>();
+        public FloorVM FloorVM => ServiceLocator.Current.GetInstance<FloorVM>();
+        public CeilVM CeilVM => ServiceLocator.Current.GetInstance<CeilVM>();
+        public WallVM WallVM => ServiceLocator.Current.GetInstance<WallVM>();
 
         public static void Cleanup()
         {

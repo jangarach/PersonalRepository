@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeRenovationCalculator"
+        xmlns:view="clr-namespace:HomeRenovationCalculator.View"
         xmlns:vm="clr-namespace:HomeRenovationCalculator.ViewModel"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
@@ -11,7 +12,20 @@
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Window.Resources>
-        <DataTemplate DataType="{x:Type vm:}"
+        <Style x:Key="tbxParam" TargetType="TextBox">
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <DataTemplate DataType="{x:Type vm:FloorVM}">
+            <view:Floor/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:CeilVM}">
+            <view:Ceil/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:WallVM}">
+            <view:Wall/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -27,12 +41,58 @@
                 <MenuItem Header="Настройка данных" Command="{Binding CommandSettingDatas}"/>
             </MenuItem>
         </Menu>
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Height="100">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
+        </Grid>
+        <GroupBox Grid.Row="1" Header="Общие параметры:" Margin="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="Высота стен [м]:"/>
+                <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource tbxParam}" Text="{Binding RoomParameters.WallHeight, ValidatesOnDataErrors=True}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="2" Text="Ширина стен [м]:"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource tbxParam}" Text="{Binding RoomParameters.WallLength, ValidatesOnDataErrors=True}"/>
+
+                <TextBlock Grid.Row="0" Grid.Column="2" Margin="2">
+                    <Run Text="Площадь потолка [м"/> 
+                    <Run Text="2" Typography.Variants="Superscript"/>
+                    <Run Text="]:"/>
+                </TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="3" Style="{StaticResource tbxParam}" Text="{Binding RoomParameters.CeilingArea, ValidatesOnDataErrors=True}"/>
+                <TextBlock Grid.Row="1" Grid.Column="2" Margin="2">
+                    <Run Text="Площадь пола [м"/> 
+                    <Run Text="2" Typography.Variants="Superscript"/>
+                    <Run Text="]:"/>
+                </TextBlock>
+                <TextBox Grid.Row="1" Grid.Column="3" Style="{StaticResource tbxParam}" Text="{Binding RoomParameters.FloorArea, ValidatesOnDataErrors=True}"/>
+            </Grid>
+        </GroupBox>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" MinWidth="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Background="#FFEEEEEE">
+                <Button Content="Расчет напольного покрытия" FontSize="14" Command="{Binding CommandChangeNavigationVM}" CommandParameter="FloorVm"/>
+                <Button FontSize="14" Command="{Binding CommandChangeNavigationVM}" CommandParameter="CeilingVm">
+                    <TextBlock Text="Расчет штукатурки и шпаклевки на потолок" TextWrapping="Wrap"/>
+                </Button>
+                <Button FontSize="14" Command="{Binding CommandChangeNavigationVM}" CommandParameter="WallVm">
+                    <TextBlock Text="Расчет штукатурки и шпаклевки на стену" TextWrapping="Wrap"/>
+                </Button>
+            </StackPanel>
+            <ContentControl Grid.Row="0" Grid.Column="1" Margin="2" Content="{Binding NavigationBaseVM}"/>
         </Grid>
     </Grid>
 </Window>
