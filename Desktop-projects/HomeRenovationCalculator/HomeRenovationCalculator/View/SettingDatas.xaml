@@ -62,7 +62,7 @@
                 <DataGrid ItemsSource="{Binding Glue}" SelectedItem="{Binding SelectedCover}" Style="{StaticResource DataGridStyle}">
                     <DataGrid.Columns>
                         <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
-                        <DataGridTextColumn MinWidth="200" Header="Объем (л.)" Binding="{Binding Capacity}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Расход литры на кв.м." Binding="{Binding Capacity}"/>
                         <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
                     </DataGrid.Columns>
                 </DataGrid>
@@ -71,8 +71,16 @@
                 <DataGrid ItemsSource="{Binding WallPaint}" SelectedItem="{Binding SelectedCover}" Style="{StaticResource DataGridStyle}">
                     <DataGrid.Columns>
                         <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
-                        <DataGridTextColumn MinWidth="200" Header="Объем (л.)" Binding="{Binding Capacity}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Расход литры на кв.м." Binding="{Binding Capacity}"/>
                         <DataGridTextColumn MinWidth="200" Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="Типы обоев">
+                <DataGrid ItemsSource="{Binding WallPaperType}" SelectedItem="{Binding SelectedWallPaperType}" Style="{StaticResource DataGridStyle}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn MinWidth="200" Header="Название" Binding="{Binding Name}"/>
+                        <DataGridTextColumn MinWidth="200" Header="Коэфициент" Binding="{Binding Rate}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>

@@ -85,3 +85,5 @@ E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator
 E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\obj\Debug\HomeRenovationCalculator.exe
 E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\obj\Debug\HomeRenovationCalculator.pdb
 E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\obj\Debug\HomeRenovationCalculator.csprojAssemblyReference.cache
+E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\bin\Debug\CalculatorModels.dll
+E:\Repos\dev\Github\PersonalRepository\Desktop-projects\HomeRenovationCalculator\HomeRenovationCalculator\bin\Debug\CalculatorModels.pdb

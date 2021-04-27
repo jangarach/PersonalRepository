@@ -21,7 +21,7 @@ namespace HomeRenovationCalculator.ViewModel
         {
             get => _CommandExit ?? (_CommandExit = new RelayCommand(() =>
             {
-
+                Application.Current.Shutdown();
             }));
         }
 

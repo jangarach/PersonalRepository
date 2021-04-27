@@ -36,7 +36,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="{Binding ParamName}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding ParamValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding ParamValue, ValidatesOnDataErrors=True}"/>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>

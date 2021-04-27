@@ -15,6 +15,7 @@ namespace HomeRenovationCalculator.ViewModel
         public event EventHandler<bool> CommandSaveChanged;
         private BaseCover BaseCover { get; set; }
         private WallPaper WallPaper { get; set; }
+        private WallPaperType WallPaperType { get; set; }
 
         public bool IsEdit { get; }
 
@@ -27,6 +28,7 @@ namespace HomeRenovationCalculator.ViewModel
         {
             BaseCover = objCover as BaseCover;
             WallPaper = objCover as WallPaper;
+            WallPaperType = objCover as WallPaperType;
             IsEdit = isEdit;
             if (IsInDesignMode)
             {
@@ -55,61 +57,98 @@ namespace HomeRenovationCalculator.ViewModel
                     break;
                 case 3: //Клей
                     Tittle += " клей";
-                    CapacityText = "Объем (л.):";
+                    CapacityText = "Расход литры на кв.м.:";
                     break;
                 case 4: //Краска
                     Tittle += " краска";
-                    CapacityText = "Объем (л.):";
+                    CapacityText = "Расход литры на кв.м.:";
+                    break;
+                case 5: //Краска
+                    Tittle += " тип обоя";
+                    CapacityText = "Коэфициент:";
+                    IsVisiblePrice = false;
                     break;
 
             }
         }
-
+        public bool IsVisiblePrice { get; set; } = true;
         public int Id { get; set; }
         public string Tittle { get; set; }
         public string CapacityText { get; set; }
 
         public string Name
         {
-            get => BaseCover?.Name ?? WallPaper?.Name;
+            get
+            {
+                if (BaseCover != null)
+                {
+                    return BaseCover.Name;
+                }
+                else if (WallPaper != null)
+                {
+                    return WallPaper.Name;
+                }
+                else
+                {
+                    return WallPaperType.Name;
+                }
+            }
             set
             {
                 if (BaseCover != null)
                 {
                     BaseCover.Name = value;
                 }
-                else
+                else if (WallPaper != null)
                 {
                     WallPaper.Name = value;
                 }
+                else
+                {
+                    WallPaperType.Name = value;
+                }
                 RaisePropertyChanged();
-
-
             }
         }
 
         public double Capacity
         {
-            get => BaseCover?.Capacity ?? WallPaper.Length;
+            get
+            {
+                if (BaseCover != null)
+                {
+                    return BaseCover.Capacity;
+                }
+                else if (WallPaper != null)
+                {
+                    return WallPaper.Length;
+                }
+                else
+                {
+                    return WallPaperType.Rate;
+                }
+            }
             set
             {
                 if (BaseCover != null)
                 {
                     BaseCover.Capacity = value;
                 }
-                else
+                else if (WallPaper != null)
                 {
                     WallPaper.Length = value;
                 }
+                else
+                {
+                    WallPaperType.Rate = value;
+                }
                 RaisePropertyChanged();
-
-
             }
         }
 
         public double Price
         {
-            get => BaseCover?.Price ?? WallPaper.Price;
+            get => IsVisiblePrice ? BaseCover?.Price ?? WallPaper.Price : 0;
             set
             {
                 if (BaseCover != null)
@@ -133,8 +172,11 @@ namespace HomeRenovationCalculator.ViewModel
             {
                 if (BaseCover != null)
                     CommandCancelChanged.Invoke(BaseCover, EventArgs.Empty);
-                else
+                else if (WallPaper != null)
                     CommandCancelChanged.Invoke(WallPaper, EventArgs.Empty);
+                else
+                    CommandCancelChanged.Invoke(WallPaperType, EventArgs.Empty);
+
 
             }));
         }
@@ -146,8 +188,10 @@ namespace HomeRenovationCalculator.ViewModel
             {
                 if (BaseCover != null)
                     CommandSaveChanged.Invoke(BaseCover, IsEdit);
-                else
+                else if (WallPaper != null)
                     CommandSaveChanged.Invoke(WallPaper, IsEdit);
+                else
+                    CommandSaveChanged.Invoke(WallPaperType, IsEdit);
             }));
         }
     }

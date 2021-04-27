@@ -90,14 +90,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\AppContext.cs" />
-    <Compile Include="Model\BaseCover.cs" />
-    <Compile Include="Model\Cover.cs" />
-    <Compile Include="Model\CoverType.cs" />
-    <Compile Include="Model\Glue.cs" />
-    <Compile Include="Model\Plaster.cs" />
-    <Compile Include="Model\Putty.cs" />
-    <Compile Include="Model\WallPaint.cs" />
-    <Compile Include="Model\WallPaper.cs" />
     <Compile Include="RoomParameters.cs" />
     <Compile Include="ViewModel\BaseParamVM.cs" />
     <Compile Include="ViewModel\CeilVM.cs" />
@@ -193,8 +185,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="View\EditWindows\" />
+    <ProjectReference Include="..\CalculatorModels\CalculatorModels.csproj">
+      <Project>{21F37D54-AB2A-4A27-A551-545946924A2F}</Project>
+      <Name>CalculatorModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -30,6 +30,7 @@ namespace HomeRenovationCalculator.ViewModel
                 AppContext.Plaster.Load();
                 AppContext.Putty.Load();
                 AppContext.WallPaper.Load();
+                AppContext.WallPaperType.Load();
                 AppContext.Wall.Load();
 
                 Glue = AppContext.Glue.Local.ToBindingList();
@@ -37,7 +38,7 @@ namespace HomeRenovationCalculator.ViewModel
                 Putty = AppContext.Putty.Local.ToBindingList();
                 WallPaper = AppContext.WallPaper.Local.ToBindingList();
                 WallPaint = AppContext.Wall.Local.ToBindingList();
-
+                WallPaperType = AppContext.WallPaperType.Local.ToBindingList();
             }
         }
 
@@ -62,6 +63,13 @@ namespace HomeRenovationCalculator.ViewModel
             set => Set(ref _WallPaper, value);
         }
 
+        IEnumerable<WallPaperType> _WallPaperType;
+        public IEnumerable<WallPaperType> WallPaperType
+        {
+            get => _WallPaperType;
+            set => Set(ref _WallPaperType, value);
+        }
+
         IEnumerable<BaseCover> _Glue;
         public IEnumerable<BaseCover> Glue
         {
@@ -76,8 +84,6 @@ namespace HomeRenovationCalculator.ViewModel
             set => Set(ref _WallPaint, value);
         }
 
-
-
         BaseCover _SelectedCover;
         public BaseCover SelectedCover
         {
@@ -90,6 +96,12 @@ namespace HomeRenovationCalculator.ViewModel
         {
             get => _SelectedWallPaper;
             set => Set(ref _SelectedWallPaper, value);
+        }
+        WallPaperType _SelectedWallPaperType;
+        public WallPaperType SelectedWallPaperType
+        {
+            get => _SelectedWallPaperType;
+            set => Set(ref _SelectedWallPaperType, value);
         }
 
         Cover _SelectedCoverType;
@@ -117,8 +129,9 @@ namespace HomeRenovationCalculator.ViewModel
                 CoverEditVM coverTypeEditVm;
                 if (SelectedTabIndex == 2)
                     coverTypeEditVm = new CoverEditVM(new WallPaper(), SelectedTabIndex);
+                else if (SelectedTabIndex == 5)
+                    coverTypeEditVm = new CoverEditVM(new WallPaperType(), SelectedTabIndex);
                 else
-
                 {
 
                     BaseCover baseCover = null;
@@ -160,7 +173,12 @@ namespace HomeRenovationCalculator.ViewModel
                         return;
                     coverTypeEditVm = new CoverEditVM(SelectedWallPaper, SelectedTabIndex, true);
                 }
-                    
+                else if (SelectedTabIndex == 5)
+                {
+                    if (SelectedWallPaperType == null)
+                        return;
+                    coverTypeEditVm = new CoverEditVM(SelectedWallPaperType, SelectedTabIndex, true);
+                }
                 else
                 {
                     if (SelectedCover == null)
@@ -198,6 +216,10 @@ namespace HomeRenovationCalculator.ViewModel
                 else if (sender is WallPaper wallPaper)
                 {
                     AppContext.WallPaper.Add(wallPaper);
+                }
+                else if (sender is WallPaperType wallPaperType)
+                {
+                    AppContext.WallPaperType.Add(wallPaperType);
                 }
                 AppContext.SaveChanges();
             }
@@ -239,7 +261,10 @@ namespace HomeRenovationCalculator.ViewModel
                     case 4: //Краска
                         AppContext.Wall.Remove(SelectedCover as WallPaint);
                         break;
-                        
+                    case 5: //тип обоя
+                        AppContext.WallPaperType.Remove(SelectedWallPaperType);
+                        break;
+
                 }
                 AppContext.SaveChanges();
             }));

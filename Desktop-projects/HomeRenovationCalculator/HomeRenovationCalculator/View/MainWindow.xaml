@@ -8,7 +8,7 @@
         xmlns:vm="clr-namespace:HomeRenovationCalculator.ViewModel"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Расчет стоимости ремонта квартиры" Height="450" Width="800"
+        Title="Расчет стоимости ремонта квартиры" Height="650" Width="800" MinHeight="650"
         d:DataContext="{d:DesignInstance Type=vm:MainViewModel, IsDesignTimeCreatable=True}"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Window.Resources>
@@ -92,7 +92,7 @@
                     <TextBlock Text="Расчет штукатурки и шпаклевки на стену" TextWrapping="Wrap"/>
                 </Button>
             </StackPanel>
-            <ContentControl Grid.Row="0" Grid.Column="1" Margin="2" Content="{Binding NavigationBaseVM}"/>
+            <ContentControl Grid.Row="0" Grid.Column="1" Margin="2" Content="{Binding NavigationBaseVM}" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
         </Grid>
     </Grid>
 </Window>

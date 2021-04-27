@@ -15,7 +15,21 @@
         </Grid.RowDefinitions>
         <GroupBox Header="Расчет отделочных работ потолка::">
             <Grid Margin="10">
-                <ItemsControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding CoverParams}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="Штукатурочная смесь:"/>
+                <ComboBox Grid.Row="0" Grid.Column="1" Margin="2" ItemsSource="{Binding SettingDatasVM.Plaster}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedPlaster}"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" Margin="2" Text="Шпаклевочная смесь:"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Margin="2" ItemsSource="{Binding SettingDatasVM.Putty}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedPutty}"/>
+                <ItemsControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding CoverParams}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -25,7 +39,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="2" Text="{Binding ParamName}"/>
-                                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding ParamValue, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Margin="2" Text="{Binding ParamValue, ValidatesOnDataErrors=True}"/>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
@@ -33,14 +47,23 @@
             </Grid>
         </GroupBox>
         <Grid Margin="2" Grid.Row="1">
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
                 <TextBlock>
-                    <Run Text="Минимальный расход: "/>
-                    <Run Text="{Binding MinCountCover}"/>
-                    <Run Text="{Binding UnitText}"/>
+                    <Run Text="Минимальный расход штукатурки: "/>
+                    <Run Text="{Binding MinCountPlaster}"/>
+                    <Run Text="кг."/>
+                    <Run Text=" Цена за мешок:"/>
+                    <Run Text="{Binding PricePlaster}"/>
+                </TextBlock>
+                <TextBlock>
+                    <Run Text="Минимальный расход шпаклевки: "/>
+                    <Run Text="{Binding MinCountPutty}"/>
+                    <Run Text="кг."/>
+                    <Run Text=" Цена за мешок:"/>
+                    <Run Text="{Binding PricePutty}"/>
                 </TextBlock>
             </StackPanel>
-            <Button Content="Вычислить" HorizontalAlignment="Right" Command="{Binding CommandCalcCoverCount}"/>
+            <Button Content="Вычислить" HorizontalAlignment="Right" VerticalAlignment="Bottom" Command="{Binding CommandCalcCoverCount}"/>
         </Grid>
     </Grid>
 </UserControl>

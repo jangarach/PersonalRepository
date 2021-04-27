@@ -23,5 +23,6 @@ namespace HomeRenovationCalculator
         public DbSet<WallPaint> Wall { get; set; }
         public DbSet<Putty> Putty { get; set; }
         public DbSet<WallPaper> WallPaper { get; set; }
+        public DbSet<WallPaperType> WallPaperType { get; set; }
     }
 }
